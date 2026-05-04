@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Talent Law — Your Talent Deserves America</title>
+  <link rel="icon" type="image/png" href="../icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #F8F9FB;
+      color: #1a1a2e;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== VARIABLES ===== */
+    :root {
+      --blue: #0A3161;
+      --blue-light: #1a4a8a;
+      --red: #B31942;
+      --red-hover: #8f1234;
+      --bg: #F8F9FB;
+      --white: #ffffff;
+      --gray-100: #f0f2f5;
+      --gray-200: #e4e7ed;
+      --gray-500: #6b7280;
+      --gray-700: #374151;
+      --shadow-sm: 0 2px 8px rgba(10,49,97,0.07);
+      --shadow-md: 0 8px 32px rgba(10,49,97,0.10);
+      --shadow-lg: 0 20px 60px rgba(10,49,97,0.14);
+      --radius: 14px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .serif { font-family: 'Playfair Display', serif; }
+    h1,h2,h3 { font-family: 'Playfair Display', serif; color: var(--blue); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.35rem); font-weight: 600; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0.75rem auto 0;
+      line-height: 1.7;
+    }
+
+    /* ===== LAYOUT ===== */
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 96px 0; }
+    section:nth-child(even) { background: var(--white); }
+    .text-center { text-align: center; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; padding: 14px 28px; border-radius: 8px;
+      font-family: 'Manrope', sans-serif; font-size: 0.95rem; font-weight: 700;
+      cursor: pointer; border: 2px solid transparent;
+      transition: all var(--transition); white-space: nowrap;
+      letter-spacing: 0.01em;
+    }
+    .btn-red {
+      background: var(--red); color: var(--white); border-color: var(--red);
+      box-shadow: 0 4px 20px rgba(179,25,66,0.30);
+    }
+    .btn-red:hover {
+      background: var(--red-hover); border-color: var(--red-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(179,25,66,0.40);
+    }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--white);
+      transform: translateY(-2px);
+    }
+    .btn-blue {
+      background: var(--blue); color: var(--white); border-color: var(--blue);
+    }
+    .btn-blue:hover {
+      background: var(--blue-light); border-color: var(--blue-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(10,49,97,0.25);
+    }
+    .btn-lg { padding: 18px 36px; font-size: 1.05rem; border-radius: 10px; }
+
+    /* ===== HEADER ===== */
+    #header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 18px 0;
+      transition: all var(--transition);
+      background: transparent;
+    }
+    #header.scrolled {
+      background: rgba(10,49,97,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(10,49,97,0.18);
+      padding: 12px 0;
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .logo {
+      display: flex; flex-direction: column; gap: 1px;
+    }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem; font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+    }
+    .logo-tagline {
+      font-size: 0.65rem; font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .logo-star { color: var(--red); margin: 0 4px; }
+    nav { display: flex; align-items: center; gap: 6px; }
+    nav a {
+      font-size: 0.875rem; font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      padding: 8px 12px; border-radius: 6px;
+      transition: all var(--transition);
+    }
+    nav a:hover { color: var(--white); background: rgba(255,255,255,0.1); }
+    .header-cta { margin-left: 8px; }
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px;
+    }
+    .burger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white); border-radius: 2px;
+      transition: all var(--transition);
+    }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(10,49,97,0.98);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.3rem; font-weight: 700; color: var(--white);
+      padding: 12px 24px;
+    }
+    .mobile-menu .close-btn {
+      position: absolute; top: 24px; right: 24px;
+      font-size: 2rem; color: var(--white); cursor: pointer;
+      background: none; border: none;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding: 0;
+      background:
+        linear-gradient(135deg, rgba(10,49,97,0.92) 0%, rgba(10,49,97,0.75) 50%, rgba(0,0,0,0.70) 100%),
+        url('https://images.unsplash.com/photo-1485738422979-f5c462d49f74?w=1600&q=80') center/cover no-repeat;
+    }
+    .hero-inner {
+      max-width: 1160px; margin: 0 auto; padding: 140px 24px 100px;
+      display: grid; grid-template-columns: 1fr; gap: 48px;
+    }
+    .hero-badge-wrap { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+    .hero-badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      font-size: 0.78rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 20px;
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(6px);
+    }
+    .hero-badge.featured { background: rgba(179,25,66,0.25); border-color: rgba(179,25,66,0.5); color: #ff8099; }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      font-weight: 800; color: var(--white); line-height: 1.12;
+      letter-spacing: -0.02em; max-width: 820px;
+    }
+    .hero-title em { font-style: normal; color: #ffd166; }
+    .hero-plusses {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 680px;
+    }
+    .hero-plus {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-left: 3px solid var(--red);
+      border-radius: 10px;
+      padding: 16px 20px;
+      backdrop-filter: blur(6px);
+      transition: background var(--transition), border-color var(--transition);
+    }
+    .hero-plus:hover {
+      background: rgba(255,255,255,0.13);
+      border-left-color: #ffd166;
+    }
+    .hero-plus-icon {
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(179,25,66,0.30);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; margin-top: 1px;
+    }
+    .hero-plus-body { display: flex; flex-direction: column; gap: 3px; }
+    .hero-plus-headline {
+      font-size: 1.0rem; font-weight: 800; color: var(--white);
+      line-height: 1.3;
+    }
+    .hero-plus-headline em { font-style: normal; color: #ffd166; }
+    .hero-plus-detail {
+      font-size: 0.83rem; color: rgba(255,255,255,0.65);
+      line-height: 1.5; font-weight: 500;
+    }
+    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-trust {
+      display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+      margin-top: 16px; padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .hero-trust-label {
+      font-size: 0.72rem; font-weight: 700;
+      color: rgba(255,255,255,0.5); letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .trust-logos { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+    .trust-logo {
+      font-size: 0.85rem; font-weight: 800;
+      color: rgba(255,255,255,0.55); letter-spacing: 0.04em;
+      transition: color var(--transition);
+    }
+    .trust-logo:hover { color: rgba(255,255,255,0.9); }
+
+    /* Floating stats */
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 16px; max-width: 480px;
+    }
+    .hero-stat {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 12px; padding: 18px 16px; text-align: center;
+      backdrop-filter: blur(8px);
+    }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem; font-weight: 800; color: var(--white);
+      line-height: 1;
+    }
+    .hero-stat-num span { color: var(--red); }
+    .hero-stat-text { font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 4px; font-weight: 600; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 6px;
+      color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.08em;
+      text-transform: uppercase; animation: bounce 2s infinite;
+    }
+    .scroll-arrow { width: 18px; height: 18px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ===== WHO WE HELP ===== */
+    #who { background: var(--bg); }
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; margin-top: 56px; }
+    .card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 36px 28px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--blue); transform: scaleX(0); transform-origin: left;
+      transition: transform var(--transition);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .card:hover::before { transform: scaleX(1); }
+    .card-icon {
+      width: 60px; height: 60px; border-radius: 14px;
+      background: linear-gradient(135deg, #e8f0fc, #c8d9f8);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; margin-bottom: 20px;
+    }
+    .card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+    .card p { font-size: 0.88rem; color: var(--gray-500); line-height: 1.6; }
+    .card-tag {
+      display: inline-block; margin-top: 14px;
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--blue); background: #e8f0fc;
+      padding: 4px 10px; border-radius: 20px; letter-spacing: 0.04em;
+    }
+
+    /* ===== WHY US ===== */
+    #why { background: var(--white); }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; margin-top: 56px; }
+    .why-card {
+      display: flex; gap: 20px; padding: 28px;
+      background: var(--bg); border-radius: var(--radius);
+      border: 1px solid var(--gray-200); transition: all var(--transition);
+    }
+    .why-card:hover { box-shadow: var(--shadow-md); border-color: #c8d9f8; transform: translateY(-3px); }
+    .why-icon {
+      flex-shrink: 0; width: 52px; height: 52px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+    }
+    .why-icon.red { background: #fde8ed; }
+    .why-icon.blue { background: #e8f0fc; }
+    .why-icon.green { background: #e6f7ee; }
+    .why-icon.gold { background: #fef3e2; }
+    .why-text h3 { font-size: 1.0rem; margin-bottom: 6px; }
+    .why-text p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; }
+    .why-text .highlight { color: var(--red); font-weight: 700; }
+
+    /* ===== HOW WE WORK ===== */
+    #how { background: var(--bg); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 56px; position: relative; }
+    .steps::before {
+      content: ''; position: absolute; top: 44px; left: 12%; right: 12%;
+      height: 2px; background: linear-gradient(90deg, var(--blue) 0%, var(--red) 100%);
+      z-index: 0;
+    }
+    .step {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 0 20px; position: relative; z-index: 1;
+    }
+    .step-num {
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--white); border: 3px solid var(--blue);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 800; color: var(--blue);
+      margin-bottom: 24px; box-shadow: var(--shadow-md);
+      transition: all var(--transition);
+    }
+    .step:nth-child(2) .step-num { border-color: #1e6bb0; }
+    .step:nth-child(3) .step-num { border-color: #8f1234; color: #8f1234; }
+    .step:nth-child(4) .step-num { border-color: var(--red); color: var(--red); }
+    .step:hover .step-num { transform: scale(1.08); box-shadow: var(--shadow-lg); }
+    .step h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .step p { font-size: 0.84rem; color: var(--gray-500); line-height: 1.6; }
+    .step-time {
+      margin-top: 10px; font-size: 0.75rem; font-weight: 700;
+      color: var(--red); background: #fde8ed; padding: 3px 10px; border-radius: 20px;
+    }
+
+    /* ===== CASES ===== */
+    #cases { background: var(--white); }
+    .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 56px; }
+    .case-card {
+      background: var(--bg); border-radius: var(--radius);
+      border: 1px solid var(--gray-200); overflow: hidden;
+      transition: all var(--transition);
+    }
+    .case-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .case-header {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      padding: 24px; display: flex; align-items: center; gap: 16px;
+    }
+    .case-avatar {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 3px solid rgba(255,255,255,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; flex-shrink: 0;
+    }
+    .case-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); font-weight: 700; }
+    .case-role { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 2px; }
+    .case-country {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      margin-top: 4px;
+    }
+    .case-body { padding: 24px; }
+    .case-result {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #e6f7ee; color: #15803d;
+      font-size: 0.8rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .case-result-dot { width: 6px; height: 6px; background: #16a34a; border-radius: 50%; }
+    .case-quote {
+      font-size: 0.88rem; color: var(--gray-700); line-height: 1.65;
+      font-style: italic; padding-left: 12px;
+      border-left: 3px solid var(--red);
+    }
+
+    /* ===== LEAD FORM ===== */
+    .form-section {
+      background: linear-gradient(135deg, var(--blue) 0%, #0d3d7a 100%);
+      padding: 96px 0; position: relative; overflow: hidden;
+    }
+    .form-section::before {
+      content: ''; position: absolute;
+      top: -100px; right: -100px; width: 400px; height: 400px;
+      background: rgba(179,25,66,0.12); border-radius: 50%; pointer-events: none;
+    }
+    .form-section::after {
+      content: ''; position: absolute;
+      bottom: -80px; left: -80px; width: 320px; height: 320px;
+      background: rgba(255,255,255,0.04); border-radius: 50%; pointer-events: none;
+    }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 700;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .form-sub { font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
+    .lead-form {
+      background: var(--white); border-radius: 20px;
+      padding: 40px; box-shadow: var(--shadow-lg);
+      max-width: 700px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-group label { font-size: 0.85rem; font-weight: 700; color: var(--blue); }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 13px 16px; border-radius: 8px;
+      border: 1.5px solid var(--gray-200);
+      font-family: 'Manrope', sans-serif; font-size: 0.9rem; color: var(--gray-700);
+      background: var(--bg); transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(10,49,97,0.10);
+    }
+    .form-group input.error,
+    .form-group select.error,
+    .form-group textarea.error { border-color: var(--red); box-shadow: 0 0 0 3px rgba(179,25,66,0.10); }
+    .form-group .err-msg { font-size: 0.78rem; color: var(--red); font-weight: 600; }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-note { font-size: 0.78rem; color: var(--gray-500); text-align: center; margin-top: 12px; }
+    .form-note svg { display: inline; vertical-align: middle; margin-right: 4px; }
+    .form-success {
+      display: none; text-align: center; padding: 48px 24px;
+    }
+    .form-success .success-icon {
+      width: 72px; height: 72px; background: #e6f7ee; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; margin: 0 auto 20px;
+    }
+    .form-success h3 { color: #15803d; font-size: 1.4rem; margin-bottom: 8px; }
+    .form-success p { color: var(--gray-500); font-size: 0.95rem; }
+
+    /* Phone with country code */
+    .phone-wrap { display: flex; gap: 8px; }
+    .phone-code {
+      width: 96px; flex-shrink: 0;
+      padding: 13px 10px; border-radius: 8px;
+      border: 1.5px solid var(--gray-200);
+      font-family: 'Manrope', sans-serif; font-size: 0.88rem; color: var(--gray-700);
+      background: var(--bg); outline: none; cursor: pointer;
+      transition: border-color var(--transition);
+    }
+    .phone-code:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(10,49,97,0.10); }
+    .phone-input { flex: 1; }
+
+    /* ===== FAQ ===== */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 780px; margin: 56px auto 0; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item {
+      background: var(--white); border-radius: var(--radius);
+      border: 1px solid var(--gray-200); overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-item.open { border-color: #c8d9f8; box-shadow: var(--shadow-md); }
+    .faq-q {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
+      padding: 22px 24px; cursor: pointer; user-select: none;
+    }
+    .faq-q-text { font-weight: 700; font-size: 0.98rem; color: var(--blue); line-height: 1.4; }
+    .faq-arrow {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--bg); border: 1.5px solid var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition); margin-top: 1px;
+    }
+    .faq-item.open .faq-arrow { background: var(--blue); border-color: var(--blue); transform: rotate(180deg); }
+    .faq-arrow svg { width: 14px; height: 14px; }
+    .faq-item.open .faq-arrow svg path { stroke: white; }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+      padding: 0 24px; font-size: 0.9rem; color: var(--gray-700); line-height: 1.75;
+    }
+    .faq-item.open .faq-a { max-height: 600px; padding: 0 24px 22px; }
+
+    /* ===== TRUST ===== */
+    #trust { background: var(--white); }
+    .media-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 40px; flex-wrap: wrap; margin: 40px 0 64px;
+      padding: 32px; background: var(--bg);
+      border-radius: var(--radius); border: 1px solid var(--gray-200);
+    }
+    .media-logo {
+      font-size: 1.05rem; font-weight: 800;
+      color: var(--gray-500); letter-spacing: 0.04em;
+      transition: color var(--transition); cursor: default;
+    }
+    .media-logo:hover { color: var(--blue); }
+    .counters { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 64px; }
+    .counter-card {
+      text-align: center; padding: 36px 24px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+      border-radius: var(--radius); box-shadow: var(--shadow-md);
+      transition: transform var(--transition);
+    }
+    .counter-card:hover { transform: translateY(-4px); }
+    .counter-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 800; color: var(--white);
+      line-height: 1; display: flex; align-items: flex-start; justify-content: center; gap: 2px;
+    }
+    .counter-plus { font-size: 1.6rem; margin-top: 4px; color: var(--red); }
+    .counter-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-top: 8px; font-weight: 600; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .review-card {
+      background: var(--bg); border-radius: var(--radius);
+      padding: 28px; border: 1px solid var(--gray-200);
+      transition: all var(--transition);
+    }
+    .review-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .review-stars { color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .review-text {
+      font-size: 0.9rem; color: var(--gray-700); line-height: 1.7; font-style: italic;
+      margin-bottom: 18px;
+    }
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), #4a8fd4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .review-name { font-weight: 700; font-size: 0.9rem; color: var(--blue); }
+    .review-role { font-size: 0.78rem; color: var(--gray-500); margin-top: 1px; }
+
+    /* ===== FOOTER ===== */
+    #footer {
+      background: #070e1f;
+      padding: 60px 0 0;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; padding-bottom: 48px;
+    }
+    .footer-brand .logo-name { font-size: 1.2rem; }
+    .footer-tagline { font-size: 0.82rem; color: rgba(255,255,255,0.4); margin-top: 8px; line-height: 1.6; max-width: 280px; }
+    .footer-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 6px; }
+    .footer-contact a { font-size: 0.85rem; color: rgba(255,255,255,0.6); transition: color var(--transition); }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-col h4 { font-family: 'Manrope', sans-serif; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color var(--transition); }
+    .footer-col ul a:hover { color: var(--white); }
+    .social-links { display: flex; gap: 10px; margin-top: 20px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: rgba(255,255,255,0.6);
+      transition: all var(--transition); cursor: pointer;
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.15); color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 24px 0; text-align: center;
+    }
+    .footer-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.3); line-height: 1.6; max-width: 700px; margin: 0 auto; }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0; transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav { display: none; }
+      .header-cta { display: none; }
+      .burger { display: flex; }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .steps::before { display: none; }
+      .steps { gap: 32px; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 64px 0; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stat:last-child { grid-column: span 2; }
+      .counters { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .lead-form { padding: 28px 20px; }
+      .media-logos { gap: 24px; }
+      .hero-trust { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    /* ===== UTILITY ===== */
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+  </style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header id="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="#hero" class="logo" aria-label="Apex Talent Law — home">
+        <span class="logo-name">Apex<span class="logo-star">★</span>Talent Law</span>
+        <span class="logo-tagline">Your Talent Deserves America</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#who">About</a>
+        <a href="#why">Services</a>
+        <a href="#cases">Cases</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact2">Contact</a>
+      </nav>
+      <a href="#contact1" class="btn btn-red header-cta">Free eligibility assessment</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+  <button class="close-btn" id="closeMenu" aria-label="Close menu">&times;</button>
+  <a href="#who" onclick="closeMobileMenu()">About</a>
+  <a href="#why" onclick="closeMobileMenu()">Services</a>
+  <a href="#cases" onclick="closeMobileMenu()">Cases</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#contact2" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact1" class="btn btn-red" onclick="closeMobileMenu()">Free eligibility assessment</a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section id="hero" aria-label="Hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge-wrap reveal">
+        <span class="hero-badge featured">★ Featured in Forbes</span>
+        <span class="hero-badge">WSJ</span>
+        <span class="hero-badge">Bloomberg</span>
+        <span class="hero-badge">TechCrunch</span>
+        <span class="hero-badge">Reuters</span>
+      </div>
+      <h1 class="hero-title reveal reveal-delay-1">
+        Get a <em>Green Card</em> on talent —<br>without the lottery or an employer
+      </h1>
+      <div class="hero-plusses reveal reveal-delay-2">
+        <div class="hero-plus">
+          <div class="hero-plus-icon">🌍</div>
+          <div class="hero-plus-body">
+            <div class="hero-plus-headline"><em>850+ clients from 47 countries</em> received green cards</div>
+            <div class="hero-plus-detail">EB-1A, EB-2 NIW, and O-1 — over 8 years of practice. Scientists, IT professionals, entrepreneurs, and artists.</div>
+          </div>
+        </div>
+        <div class="hero-plus">
+          <div class="hero-plus-icon">📊</div>
+          <div class="hero-plus-body">
+            <div class="hero-plus-headline">Approval rate <em>94%</em> — above market average</div>
+            <div class="hero-plus-detail">The industry average is 75%. We only take strong cases and see them through to a decision.</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-buttons reveal reveal-delay-3">
+        <a href="#contact1" class="btn btn-red btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Free case assessment
+        </a>
+        <a href="#cases" class="btn btn-outline btn-lg">View cases →</a>
+      </div>
+      <div class="hero-trust reveal reveal-delay-4">
+        <span class="hero-trust-label">As seen in</span>
+        <div class="trust-logos">
+          <span class="trust-logo">FORBES</span>
+          <span class="trust-logo">WSJ</span>
+          <span class="trust-logo">BLOOMBERG</span>
+          <span class="trust-logo">TECHCRUNCH</span>
+          <span class="trust-logo">REUTERS</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-num">850<span>+</span></div>
+        <div class="hero-stat-text">Approved<br>cases</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">94<span>%</span></div>
+        <div class="hero-stat-text">Approval<br>rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">47</div>
+        <div class="hero-stat-text">Client<br>countries</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- ========== WHO WE HELP ========== -->
+<section id="who" aria-labelledby="who-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Our clients</span>
+      <h2 id="who-heading">Who we help</h2>
+      <p class="section-subtitle">Talent-based green cards are not only for celebrities. Any expert in their field may qualify for EB-1A, EB-2 NIW, or O-1.</p>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal reveal-delay-1">
+        <div class="card-icon">🔬</div>
+        <h3>Scientists and researchers</h3>
+        <p>Publications in peer-reviewed journals, citations, service on grant review panels, and substantial contributions at the forefront of your field.</p>
+        <span class="card-tag">EB-1A · EB-2 NIW</span>
+      </div>
+      <div class="card reveal reveal-delay-2">
+        <div class="card-icon">💻</div>
+        <h3>IT specialists and engineers</h3>
+        <p>Senior developers, architects, ML/AI engineers, and technical leaders with patents or significant open-source contributions.</p>
+        <span class="card-tag">EB-1A · EB-2 NIW · O-1</span>
+      </div>
+      <div class="card reveal reveal-delay-3">
+        <div class="card-icon">🚀</div>
+        <h3>Entrepreneurs and investors</h3>
+        <p>VC-backed startup founders, serial entrepreneurs, and business angels with a track record.</p>
+        <span class="card-tag">EB-2 NIW · EB-1A</span>
+      </div>
+      <div class="card reveal reveal-delay-4">
+        <div class="card-icon">🎭</div>
+        <h3>Artists and athletes</h3>
+        <p>Musicians, actors, choreographers, and professional athletes with awards and recognition in their field.</p>
+        <span class="card-tag">O-1B · EB-1A</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== WHY US ========== -->
+<section id="why" aria-labelledby="why-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Why us</span>
+      <h2 id="why-heading">Why Apex Talent Law</h2>
+      <p class="section-subtitle">We do more than file paperwork — we build a case strategy that stands up to the toughest USCIS scrutiny.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon red">📊</div>
+        <div class="why-text">
+          <h3>Approval rate <span class="highlight">94%</span></h3>
+          <p>Above the market average (75%). We screen cases carefully and only take matters we believe in.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon green">💰</div>
+        <div class="why-text">
+          <h3>Money-back guarantee</h3>
+          <p>If you receive a denial while following all of our recommendations, we refund your legal fees — 100%, no asterisks.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-3">
+        <div class="why-icon blue">⚖️</div>
+        <div class="why-text">
+          <h3>15 immigration attorneys</h3>
+          <p>Each has 10+ years of experience and deep focus in specific categories (EB-1A, NIW, O-1). An expert owns your case.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-4">
+        <div class="why-icon gold">🕐</div>
+        <div class="why-text">
+          <h3>Free 45-minute assessment</h3>
+          <p>A Zoom call with an attorney: an honest read on your odds, the right category, and a strategy — no hard sell.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-1">
+        <div class="why-icon red">🛡️</div>
+        <div class="why-text">
+          <h3>End-to-end support</h3>
+          <p>From first consult to card in hand: strategy, evidence gathering, petition drafting, RFE responses, and interviews.</p>
+        </div>
+      </div>
+      <div class="why-card reveal reveal-delay-2">
+        <div class="why-icon blue">🌍</div>
+        <div class="why-text">
+          <h3>Communication in 8 languages</h3>
+          <p>We work in Russian, English, Chinese, Spanish, Hindi, Arabic, French, and Portuguese.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== HOW WE WORK ========== -->
+<section id="how" aria-labelledby="how-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">How we work</span>
+      <h2 id="how-heading">Our process</h2>
+      <p class="section-subtitle">A clear four-step path — you always know where your case stands.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal reveal-delay-1">
+        <div class="step-num">1</div>
+        <h3>Free case assessment</h3>
+        <p>45 minutes on Zoom with an immigration attorney. We review your achievements, map the right category, and discuss your odds.</p>
+        <span class="step-time">45 minutes · Zoom</span>
+      </div>
+      <div class="step reveal reveal-delay-2">
+        <div class="step-num">2</div>
+        <h3>Strategy and evidence</h3>
+        <p>We design a tailored strategy, surface gaps in your profile, and help you close them. We gather recommendation letters from experts.</p>
+        <span class="step-time">3–4 weeks</span>
+      </div>
+      <div class="step reveal reveal-delay-3">
+        <div class="step-num">3</div>
+        <h3>Petition preparation and filing</h3>
+        <p>We draft a compelling petition letter, organize all evidence, and file I-140 (and I-539/I-485 when needed).</p>
+        <span class="step-time">2–3 weeks to file</span>
+      </div>
+      <div class="step reveal reveal-delay-4">
+        <div class="step-num">4</div>
+        <h3>Approval and moving to the U.S.</h3>
+        <p>Once approved, we guide you through next steps: adjustment of status or consular processing. Welcome to America.</p>
+        <span class="step-time">Total: 4–14 months</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CASES ========== -->
+<section id="cases" aria-labelledby="cases-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Success stories</span>
+      <h2 id="cases-heading">Client case studies</h2>
+      <p class="section-subtitle">Real people — scientists, founders, performers — who obtained green cards with our help.</p>
+    </div>
+    <div class="cases-grid">
+      <!-- Case 1 -->
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-header">
+          <div class="case-avatar">👨‍💻</div>
+          <div>
+            <div class="case-name">Dmitry K.</div>
+            <div class="case-role">AI researcher, PhD</div>
+            <div class="case-country">🇷🇺 Russia → 🇺🇸 U.S.</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-result">
+            <div class="case-result-dot"></div>
+            EB-1A approved · 4 months · Google
+          </div>
+          <p class="case-quote">"I thought 12 publications and two patents were not enough. Apex showed me I was wrong — and structured the case so USCIS approved on the first try."</p>
+        </div>
+      </div>
+      <!-- Case 2 -->
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-header">
+          <div class="case-avatar">🩰</div>
+          <div>
+            <div class="case-name">Maria S.</div>
+            <div class="case-role">Principal ballerina</div>
+            <div class="case-country">🇺🇦 Ukraine → 🇺🇸 U.S.</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-result">
+            <div class="case-result-dot"></div>
+            O-1 → EB-1A · American Ballet Theatre
+          </div>
+          <p class="case-quote">"We started with O-1, then moved to EB-1A. The whole process took 11 months. I now perform with American Ballet Theatre — a dream come true."</p>
+        </div>
+      </div>
+      <!-- Case 3 -->
+      <div class="case-card reveal reveal-delay-3">
+        <div class="case-header">
+          <div class="case-avatar">💼</div>
+          <div>
+            <div class="case-name">Rajesh P.</div>
+            <div class="case-role">Fintech Founder, CEO</div>
+            <div class="case-country">🇮🇳 India → 🇺🇸 San Francisco</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-result">
+            <div class="case-result-dot"></div>
+            EB-2 NIW approved · 7 months
+          </div>
+          <p class="case-quote">"My startup raised a $2.3M seed round, but I did not know how to use that for immigration. Apex framed the case around national economic impact and approval came quickly."</p>
+        </div>
+      </div>
+      <!-- Case 4 -->
+      <div class="case-card reveal reveal-delay-4">
+        <div class="case-header">
+          <div class="case-avatar">🔬</div>
+          <div>
+            <div class="case-name">Anna L.</div>
+            <div class="case-role">Molecular biologist, PhD</div>
+            <div class="case-country">🇧🇾 Belarus → 🇺🇸 U.S.</div>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="case-result">
+            <div class="case-result-dot"></div>
+            EB-1A approved · first attempt · 23 publications
+          </div>
+          <p class="case-quote">"23 publications, h-index 14, two NIH grants. Apex showed how to present it the right way. Approved on the first try with no RFE."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LEAD FORM #1 ========== -->
+<div class="form-section" id="contact1" aria-labelledby="form1-heading">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom: 0;">
+      <span class="section-label" style="color: rgba(255,255,255,0.6);">Start now</span>
+      <h2 class="form-title" id="form1-heading">Learn your odds in 45 minutes — free</h2>
+      <p class="form-sub">Tell us about yourself — we will assess your case and propose the best strategy without pressure or a sales pitch.</p>
+    </div>
+    <div class="lead-form reveal">
+      <div class="form-success" id="success1">
+        <div class="success-icon">✅</div>
+        <h3>Thank you! We received your request</h3>
+        <p>We will reach out within 2 hours to confirm your consultation.<br>Check your email — we will send a confirmation.</p>
+      </div>
+      <form id="form1" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name1">Your name *</label>
+            <input type="text" id="name1" name="name" placeholder="John Smith" autocomplete="name" />
+            <span class="err-msg" id="name1-err" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="email1">Email *</label>
+            <input type="email" id="email1" name="email" placeholder="ivan@example.com" autocomplete="email" />
+            <span class="err-msg" id="email1-err" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone1">Phone *</label>
+          <div class="phone-wrap">
+            <select class="phone-code" id="code1" aria-label="Country code">
+              <option value="+7">🇷🇺 +7</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+380">🇺🇦 +380</option>
+              <option value="+375">🇧🇾 +375</option>
+              <option value="+7 7">🇰🇿 +7 7</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+966">🇸🇦 +966</option>
+            </select>
+            <input type="tel" id="phone1" name="phone" class="phone-input" placeholder="(999) 123-4567" autocomplete="tel" />
+          </div>
+          <span class="err-msg" id="phone1-err" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="prof1">Your profession *</label>
+          <select id="prof1" name="profession">
+            <option value="">— Select field —</option>
+            <option value="science">Scientist / Researcher</option>
+            <option value="it">IT specialist / Engineer</option>
+            <option value="founder">Entrepreneur / Founder</option>
+            <option value="arts">Performer / Musician / Actor</option>
+            <option value="sports">Athlete</option>
+            <option value="medicine">Physician / Medicine</option>
+            <option value="law">Attorney / Finance</option>
+            <option value="investor">Investor</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="err-msg" id="prof1-err" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="achiev1">Briefly describe your achievements *</label>
+          <textarea id="achiev1" name="achievements" placeholder="E.g.: 15 Q1 journal papers, h-index 8, 2 patents, winner of award X…"></textarea>
+          <span class="err-msg" id="achiev1-err" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn btn-red btn-lg" style="width:100%; justify-content:center;">
+          Get a free assessment →
+        </button>
+        <p class="form-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Confidential. We do not share your data with third parties. By submitting, you agree to our privacy policy.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FAQ ========== -->
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">FAQ</span>
+      <h2 id="faq-heading">Straight answers to common concerns</h2>
+      <p class="section-subtitle">We collected the most frequent objections — honest, detailed answers without marketing fluff.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“I am not a Nobel laureate — I have no shot”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>That is the most common myth. <strong>About 80% of our clients are everyday professionals</strong> who excel at what they do. USCIS does not require worldwide fame — you must show that you are among the very best in your field.</p>
+          <p style="margin-top:12px">For EB-1A, meeting three of ten criteria is enough: publications, citations, judging work, high compensation, patents, membership in selective associations. For EB-2 NIW, you must show your work has substantial merit and national importance to the United States. We help surface and document achievements you might not even count yet.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“It is too expensive for me”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>We offer <strong>flexible payment plans</strong> — we split fees across milestones (assessment, strategy, filing, support) so you pay as the case moves forward.</p>
+          <p style="margin-top:12px">Think about ROI: average compensation for senior specialists in the U.S. is roughly $120–200k per year. A green card is not just a piece of plastic — it multiplies earning power, unlocks better employers, and secures long-term settlement rights. Many clients recover the investment within the first 3–4 months of working in America.</p>
+          <p style="margin-top:12px">We also stand behind a <strong>money-back guarantee</strong>: follow our recommendations and if you still receive a denial, we refund your fees in full.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“What if I get denied?”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>We only take cases with strong merits — that is how we maintain a 94% approval rate. If a denial happens or you receive an RFE (Request for Evidence), we:</p>
+          <ul style="margin: 12px 0 12px 20px; line-height: 2;">
+            <li>Respond to RFEs — our RFE-response success rate is <strong>89%</strong></li>
+            <li>Analyze the denial and file an appeal or a new petition when appropriate</li>
+            <li>If you followed every recommendation — <strong>we refund your legal fees in full</strong></li>
+          </ul>
+          <p>We do not disappear after a denial — support covers every stage through a final outcome.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“How long does the entire process take?”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>It depends on the category and your situation:</p>
+          <ul style="margin: 12px 0 12px 20px; line-height: 2.2;">
+            <li><strong>O-1 (work visa):</strong> 2–5 months — a fast first step into the United States</li>
+            <li><strong>EB-1A with premium processing:</strong> 4–8 months overall (the petition can be adjudicated in 15 days)</li>
+            <li><strong>EB-2 NIW:</strong> typically 7–14 months, or 4–6 months with premium processing</li>
+          </ul>
+          <p>Nationals of Russia, India, and China may face visa bulletin backlogs — we plan early to minimize waiting time.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“Can we work together if I do not speak English?”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>Absolutely. Our team works in <strong>eight languages</strong>: Russian, English, Chinese, Spanish, Hindi, Arabic, French, and Portuguese.</p>
+          <p style="margin-top:12px">Consultations, document prep, and day-to-day communication can be in your native language. The petition itself is filed in English — we handle that. English fluency is not a statutory requirement for EB-1A or EB-2 NIW.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“Do I need a U.S. employer to get a green card?”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p><strong>No — that is one of the biggest benefits of talent visas.</strong></p>
+          <ul style="margin: 12px 0 12px 20px; line-height: 2.2;">
+            <li><strong>EB-1A</strong> — no employer required; you can self-petition</li>
+            <li><strong>EB-2 NIW</strong> — National Interest Waiver; no employer needed</li>
+            <li><strong>O-1</strong> — requires a petitioner (employer or agent), but it is flexible</li>
+          </ul>
+          <p>You can freelance, launch a company, or work for multiple employers — a green card gives you full flexibility in the job market.</p>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span class="faq-q-text">“What makes you better than other immigration firms?”</span>
+          <div class="faq-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+        </div>
+        <div class="faq-a">
+          <p>To be fair, other firms have talented lawyers too. Here is what sets us apart:</p>
+          <ul style="margin: 12px 0 12px 20px; line-height: 2.2;">
+            <li><strong>94% approval rate</strong> versus a ~75% market average</li>
+            <li><strong>Money-back guarantee</strong> — few competitors match that</li>
+            <li>Dedicated focus on EB-1A/NIW/O-1 — we do not try to do everything</li>
+            <li>A 15-attorney bench — no single point of burnout</li>
+            <li>Eight languages — minimal language friction</li>
+            <li>Eight years of experience and 850+ approved cases — numbers we stand behind publicly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRUST ========== -->
+<section id="trust" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label">Our reputation</span>
+      <h2 id="trust-heading">Trusted by clients and covered in the press</h2>
+    </div>
+    <div class="media-logos reveal">
+      <span class="media-logo">FORBES</span>
+      <span class="media-logo">THE WALL STREET JOURNAL</span>
+      <span class="media-logo">BLOOMBERG</span>
+      <span class="media-logo">TECHCRUNCH</span>
+      <span class="media-logo">REUTERS</span>
+    </div>
+    <div class="counters">
+      <div class="counter-card reveal reveal-delay-1">
+        <div class="counter-num"><span id="cnt-cases">0</span><span class="counter-plus">+</span></div>
+        <div class="counter-label">Approved cases</div>
+      </div>
+      <div class="counter-card reveal reveal-delay-2">
+        <div class="counter-num"><span id="cnt-countries">0</span></div>
+        <div class="counter-label">Countries represented</div>
+      </div>
+      <div class="counter-card reveal reveal-delay-3">
+        <div class="counter-num"><span id="cnt-rate">0</span><span class="counter-plus">%</span></div>
+        <div class="counter-label">Approval rate</div>
+      </div>
+      <div class="counter-card reveal reveal-delay-4">
+        <div class="counter-num"><span id="cnt-lawyers">0</span></div>
+        <div class="counter-label">Immigration attorneys</div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Apex Talent Law are not just attorneys — they are strategists. They spotted strengths in my profile that I missed and built a compelling case. EB-2 NIW was approved in six months."</p>
+        <div class="review-author">
+          <div class="review-avatar">👨‍🔬</div>
+          <div>
+            <div class="review-name">Sergey M.</div>
+            <div class="review-role">Nuclear physicist · Russia → Chicago</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"USCIS sent an RFE — I panicked and called Apex. They answered every question USCIS raised, and approval arrived three months later. The money-back guarantee gave real peace of mind."</p>
+        <div class="review-author">
+          <div class="review-avatar">👩‍⚕️</div>
+          <div>
+            <div class="review-name">Leila K.</div>
+            <div class="review-role">Neurosurgeon · Kazakhstan → Houston</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"They worked with me in Chinese — invaluable. Everything was clear, zero confusion. EB-1A approved, I moved to Seattle and joined Amazon. Thank you to the whole team!"</p>
+        <div class="review-author">
+          <div class="review-avatar">👨‍💼</div>
+          <div>
+            <div class="review-name">Wei Zhang</div>
+            <div class="review-role">Software architect · China → Seattle</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LEAD FORM #2 ========== -->
+<div class="form-section" id="contact2" aria-labelledby="form2-heading">
+  <div class="container">
+    <div class="text-center reveal">
+      <span class="section-label" style="color: rgba(255,255,255,0.6);">Final step</span>
+      <h2 class="form-title" id="form2-heading">Ready to begin your journey to the U.S.?</h2>
+      <p class="form-sub">Book a free consultation — learn your realistic odds and a tailored case roadmap in 45 minutes.</p>
+    </div>
+    <div class="lead-form reveal">
+      <div class="form-success" id="success2">
+        <div class="success-icon">✅</div>
+        <h3>Thank you! We received your request</h3>
+        <p>We will reach out within 2 hours to confirm your consultation.<br>Check your email — we will send a confirmation.</p>
+      </div>
+      <form id="form2" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name2">Your name *</label>
+            <input type="text" id="name2" name="name" placeholder="John Smith" autocomplete="name" />
+            <span class="err-msg" id="name2-err" aria-live="polite"></span>
+          </div>
+          <div class="form-group">
+            <label for="email2">Email *</label>
+            <input type="email" id="email2" name="email" placeholder="ivan@example.com" autocomplete="email" />
+            <span class="err-msg" id="email2-err" aria-live="polite"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone2">Phone *</label>
+          <div class="phone-wrap">
+            <select class="phone-code" id="code2" aria-label="Country code">
+              <option value="+7">🇷🇺 +7</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+380">🇺🇦 +380</option>
+              <option value="+375">🇧🇾 +375</option>
+              <option value="+7 7">🇰🇿 +7 7</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+966">🇸🇦 +966</option>
+            </select>
+            <input type="tel" id="phone2" name="phone" class="phone-input" placeholder="(999) 123-4567" autocomplete="tel" />
+          </div>
+          <span class="err-msg" id="phone2-err" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="prof2">Your profession *</label>
+          <select id="prof2" name="profession">
+            <option value="">— Select field —</option>
+            <option value="science">Scientist / Researcher</option>
+            <option value="it">IT specialist / Engineer</option>
+            <option value="founder">Entrepreneur / Founder</option>
+            <option value="arts">Performer / Musician / Actor</option>
+            <option value="sports">Athlete</option>
+            <option value="medicine">Physician / Medicine</option>
+            <option value="law">Attorney / Finance</option>
+            <option value="investor">Investor</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="err-msg" id="prof2-err" aria-live="polite"></span>
+        </div>
+        <div class="form-group">
+          <label for="achiev2">Briefly describe your achievements *</label>
+          <textarea id="achiev2" name="achievements" placeholder="E.g.: 15 Q1 journal papers, h-index 8, 2 patents, winner of award X…"></textarea>
+          <span class="err-msg" id="achiev2-err" aria-live="polite"></span>
+        </div>
+        <button type="submit" class="btn btn-red btn-lg" style="width:100%; justify-content:center;">
+          Book your free consultation →
+        </button>
+        <p class="form-note">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Confidential. We do not share your data with third parties.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer id="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-name">Apex<span class="logo-star">★</span>Talent Law</span>
+          <span class="logo-tagline">Your Talent Deserves America</span>
+        </div>
+        <p class="footer-tagline">We focus on merit-based immigration — EB-1A, EB-2 NIW, and O-1. We help top professionals worldwide obtain a Green Card and build their futures in the United States.</p>
+        <div class="footer-contact">
+          <a href="https://maps.google.com" target="_blank" rel="noopener">📍 1101 Pennsylvania Ave NW, Washington, DC 20004</a>
+          <a href="tel:+12025551234">📞 +1 (202) 555-1234</a>
+          <a href="mailto:info@apextalentlaw.com">✉️ info@apextalentlaw.com</a>
+        </div>
+        <div class="social-links" aria-label="Social media">
+          <a class="social-btn" href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+          <a class="social-btn" href="#" aria-label="Twitter / X" title="Twitter">𝕏</a>
+          <a class="social-btn" href="#" aria-label="Telegram" title="Telegram">✈</a>
+          <a class="social-btn" href="#" aria-label="YouTube" title="YouTube">▶</a>
+          <a class="social-btn" href="#" aria-label="Instagram" title="Instagram">◎</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#why">EB-1A — Extraordinary ability</a></li>
+          <li><a href="#why">EB-2 NIW — National interest waiver</a></li>
+          <li><a href="#why">O-1 — Talent work visa</a></li>
+          <li><a href="#why">Case evaluation</a></li>
+          <li><a href="#why">Strategic consulting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#who">About</a></li>
+          <li><a href="#cases">Case studies</a></li>
+          <li><a href="#trust">Testimonials</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact1">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+          <li><a href="#">Disclaimer</a></li>
+          <li><a href="#">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p class="footer-disclaimer">
+        © 2024 Apex Talent Law PLLC. All rights reserved. &nbsp;|&nbsp;
+        <strong>Attorney advertising.</strong> Past results do not guarantee future outcomes. The information on this website is for general informational purposes only and does not constitute legal advice. No attorney-client relationship is formed by reading this website or submitting a contact form without a written engagement agreement. Results depend on individual circumstances. Apex Talent Law PLLC is licensed to practice law in the District of Columbia and New York.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+  // ===== HEADER SCROLL EFFECT =====
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const curr = window.scrollY;
+    if (curr > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    lastScroll = curr;
+  }, { passive: true });
+
+  // ===== BURGER MENU =====
+  const burgerBtn = document.getElementById('burgerBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu  = document.getElementById('closeMenu');
+
+  function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    burgerBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    burgerBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  burgerBtn.addEventListener('click', openMobileMenu);
+  closeMenu.addEventListener('click', closeMobileMenu);
+  mobileMenu.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) closeMobileMenu();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  // ===== SCROLL REVEAL =====
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // ===== FAQ ACCORDION =====
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+    btn.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+
+  // ===== COUNTER ANIMATION =====
+  function animateCounter(el, target, duration = 1800) {
+    let start = null;
+    const step = (timestamp) => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  }
+
+  const counters = [
+    { id: 'cnt-cases',     target: 850  },
+    { id: 'cnt-countries', target: 47   },
+    { id: 'cnt-rate',      target: 94   },
+    { id: 'cnt-lawyers',   target: 15   },
+  ];
+  let countersStarted = false;
+  const counterSection = document.querySelector('.counters');
+  const counterObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting && !countersStarted) {
+      countersStarted = true;
+      counters.forEach(c => {
+        const el = document.getElementById(c.id);
+        if (el) animateCounter(el, c.target);
+      });
+    }
+  }, { threshold: 0.3 });
+  if (counterSection) counterObserver.observe(counterSection);
+
+  // Telegram notify (client-side: token is visible in DevTools; rotate at @BotFather if abused)
+  const TG_BOT_TOKEN = '8722297224:AAEGbWV2OWEg-dsfTntdWV-tbI1qhXHQJ40';
+  const TG_CHAT_IDS = ['718516131', '7923325674'];
+  const TG_API_BASE = `https://api.telegram.org/bot${TG_BOT_TOKEN}`;
+
+  function tgTrimText(s, max) {
+    const t = (s || '').trim();
+    if (t.length <= max) return t;
+    return t.slice(0, max - 1) + '…';
+  }
+
+  async function sendLeadToTelegram(payload) {
+    const text = [
+      '📋 New lead — funnel4',
+      `Form: ${payload.formLabel}`,
+      '',
+      '👤 Name: ' + payload.name,
+      '📧 Email: ' + payload.email,
+      '📞 Phone: ' + payload.phone,
+      '💼 Profession: ' + payload.professionLabel,
+      '',
+      '📝 Achievements:',
+      tgTrimText(payload.achievements, 3500),
+      '',
+      '🌐 ' + location.href,
+    ].join('\n');
+
+    const reqs = TG_CHAT_IDS.map((chatId) =>
+      fetch(`${TG_API_BASE}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          disable_web_page_preview: true,
+        }),
+      }).then(async (res) => {
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          throw new Error(data.description || res.statusText || 'Telegram error');
+        }
+        return data;
+      })
+    );
+
+    const settled = await Promise.allSettled(reqs);
+    const failed = settled.filter((r) => r.status === 'rejected');
+    if (failed.length === settled.length) {
+      const msg = failed[0] && failed[0].reason && failed[0].reason.message;
+      throw new Error(msg || 'Could not send to Telegram');
+    }
+  }
+
+  // ===== FORM VALIDATION & SUBMIT =====
+  function validateForm(formId) {
+    const form = document.getElementById(formId);
+    const suffix = formId.replace('form', '');
+    let valid = true;
+
+    // Name
+    const name = document.getElementById('name' + suffix);
+    const nameErr = document.getElementById('name' + suffix + '-err');
+    if (!name.value.trim() || name.value.trim().length < 2) {
+      name.classList.add('error');
+      nameErr.textContent = 'Enter your name (at least 2 characters)';
+      valid = false;
+    } else {
+      name.classList.remove('error');
+      nameErr.textContent = '';
+    }
+
+    // Email
+    const email = document.getElementById('email' + suffix);
+    const emailErr = document.getElementById('email' + suffix + '-err');
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRe.test(email.value.trim())) {
+      email.classList.add('error');
+      emailErr.textContent = 'Enter a valid email address';
+      valid = false;
+    } else {
+      email.classList.remove('error');
+      emailErr.textContent = '';
+    }
+
+    // Phone
+    const phone = document.getElementById('phone' + suffix);
+    const phoneErr = document.getElementById('phone' + suffix + '-err');
+    const phoneClean = phone.value.replace(/\D/g, '');
+    if (phoneClean.length < 7) {
+      phone.classList.add('error');
+      phoneErr.textContent = 'Enter a valid phone number';
+      valid = false;
+    } else {
+      phone.classList.remove('error');
+      phoneErr.textContent = '';
+    }
+
+    // Profession
+    const prof = document.getElementById('prof' + suffix);
+    const profErr = document.getElementById('prof' + suffix + '-err');
+    if (!prof.value) {
+      prof.classList.add('error');
+      profErr.textContent = 'Please select your profession';
+      valid = false;
+    } else {
+      prof.classList.remove('error');
+      profErr.textContent = '';
+    }
+
+    // Achievements
+    const achiev = document.getElementById('achiev' + suffix);
+    const achievErr = document.getElementById('achiev' + suffix + '-err');
+    if (!achiev.value.trim() || achiev.value.trim().length < 10) {
+      achiev.classList.add('error');
+      achievErr.textContent = 'Please briefly describe your achievements';
+      valid = false;
+    } else {
+      achiev.classList.remove('error');
+      achievErr.textContent = '';
+    }
+
+    return valid;
+  }
+
+  function setupForm(formId) {
+    const form = document.getElementById(formId);
+    const suffix = formId.replace('form', '');
+    const successEl = document.getElementById('success' + suffix);
+
+    // Clear error on input
+    form.querySelectorAll('input, select, textarea').forEach(field => {
+      const clear = function() {
+        this.classList.remove('error');
+        const errId = this.id + '-err';
+        const errEl = document.getElementById(errId);
+        if (errEl) errEl.textContent = '';
+      };
+      field.addEventListener('input', clear);
+      field.addEventListener('change', clear);
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!validateForm(formId)) {
+        const firstErr = form.querySelector('.error');
+        if (firstErr) {
+          firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstErr.focus();
+        }
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      const origText = btn.innerHTML;
+      btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="animation:spin 0.8s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending...';
+      btn.disabled = true;
+      btn.style.opacity = '0.75';
+
+      const codeEl = document.getElementById('code' + suffix);
+      const phoneEl = document.getElementById('phone' + suffix);
+      const profEl = document.getElementById('prof' + suffix);
+      const codePart = codeEl && codeEl.value ? codeEl.value.trim() : '';
+      const phoneDigits = phoneEl.value.trim();
+      const fullPhone = [codePart, phoneDigits].filter(Boolean).join(' ');
+      const professionLabel = profEl && profEl.selectedIndex >= 0
+        ? profEl.options[profEl.selectedIndex].textContent.trim()
+        : '';
+
+      const payload = {
+        formLabel: formId === 'form1' ? 'Top CTA' : 'Bottom CTA',
+        name: document.getElementById('name' + suffix).value.trim(),
+        email: document.getElementById('email' + suffix).value.trim(),
+        phone: fullPhone,
+        professionLabel,
+        achievements: document.getElementById('achiev' + suffix).value.trim(),
+      };
+
+      sendLeadToTelegram(payload)
+        .then(() => {
+          form.style.display = 'none';
+          successEl.style.display = 'block';
+        })
+        .catch((err) => {
+          console.error(err);
+          alert('Could not send your request. Please try again or email us directly.');
+          btn.innerHTML = origText;
+          btn.disabled = false;
+          btn.style.opacity = '';
+        });
+    });
+  }
+
+  setupForm('form1');
+  setupForm('form2');
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const headerHeight = document.getElementById('header').offsetHeight;
+        const y = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ===== SPIN ANIMATION (for loading) =====
+  const spinStyle = document.createElement('style');
+  spinStyle.textContent = '@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }';
+  document.head.appendChild(spinStyle);
+</script>
+</body>
+</html>
